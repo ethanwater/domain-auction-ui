@@ -14,7 +14,6 @@
   align-items: center; /* Center vertically */
   justify-content: flex-start; /* Align items to the left */
   padding: 20px;
-  margin-bottom: 5%;
   color: white;
 }
    
@@ -49,16 +48,29 @@
   }
 }
 
+/* Domain list container */
 .domain-list-container {
-  display: flex;
-  justify-content: center; /* Center the grid */
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Optional: Center vertically if needed */
+  width: 100%; /* Full-width container */
+  max-width: 1200px; /* Match the table's max width */
+  margin: 0 auto; /* Center the container itself */
+  padding: 20px; /* Optional: Add spacing */
+}
+
+/* Footer container */
+.footer {
+  flex-direction: column;
+  display: flex; /* Arrange items in a row */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Align items vertically */
+  gap: 20px; /* Space between text and the link */
   padding: 20px;
-  width: 100%;
+  color: white; /* Text color */
+  font-size: 0.9rem;
 }
-.footer-container {
-  text-align: center;
-  color: #fff;
-}
+
 
 @keyframes App-logo-spin {
   from {

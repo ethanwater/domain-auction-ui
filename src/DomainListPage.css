@@ -1,4 +1,4 @@
-/* General styles */
+/* General Styles */
 body {
   background: linear-gradient(180deg, rgb(198, 195, 195), #25242c);
   font-size: 14px;
@@ -7,56 +7,53 @@ body {
   color: #fff;
 }
 
-/* Domain list*/
+/* Domain Page Layout */
+.domain-page {
+  display: grid;
+  grid-template-columns: 2fr 3fr; /* Left column for card, right for listings */
+  gap: 5%; /* Space between the two columns */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Domain List */
 .domain-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  gap: 15px;
-  max-width: 1200px; /* Limit the total width */
-  width: 100%; /* Take full width up to max-width */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between items */
+  width: 100%;
+  margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .domain-list {
-    grid-template-columns: 1fr; /* Single column on smaller screens */
-  }
-}
-
-/* Individual domain item */
 .domain-item {
+  pointer-events: all;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: background-color 1s, transform 0.3s;
-  width: 100%; /* Automatically take full width of its grid cell */
+  width: 100%;
 }
 
 .domain-item:hover {
-  transform: translateY(-3px); /* Add slight lift effect */
+  transform: translateY(-3px); /* Lift effect */
 }
 
 .domain-item:hover:not(.domain-sold-item) {
-  background-color: #abcef4; /* Change background color on hover */
+  background-color: #abcef4; /* Hover background color */
 }
 
 .domain-sold-item {
-  background-color: grey; /* For sold domains */
+  background-color: grey; /* Styling for sold domains */
 }
 
-/* Expanded domain details */
-.domain-details {
-  padding: 15px;
-  text-align: left;
-  width: 100%; /* Take full width within the grid cell */
-}
-
-/* Domain header */
 .domain-header {
-  font-weight: lighter;
-  display: flex; /* Use Flexbox for layout */
-  justify-content: space-between; /* Push content to the edges */
-  align-items: center; /* Vertically align items */
+  display: flex; /* Align items in a row */
+  justify-content: space-between; /* Push items to edges */
+  align-items: center;
   padding: 15px;
   cursor: pointer;
 }
@@ -67,45 +64,185 @@ body {
   color: black;
 }
 
-/* Price and sold styling */
-
 .domain-price {
-  color: #007bff;
-  font-size: 1rem; /* Increase font size to match the domain title */
-  font-weight: light; /* Make it visually more distinct */
+  color: #053993;
+  font-weight: lighter;
+  font-size: 1rem;
 }
 
 .domain-sold {
+  font-weight: bold;
   color: white;
-  font-size: 1rem; /* Increase font size to match the domain title */
 }
 
-/* Domain details */
-.domain-details {
-  padding: 15px;
-  font-weight: lighter;
+/* Details Container and Card */
+.details-container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Adjust width to fit grid layout */
+  height: 500px; /* Set a fixed height */
+  overflow: hidden; /* Prevent content from overflowing */
+  display: flex;
+  flex-direction: column; /* Arrange content vertically */
   text-align: left;
-  width: 400px;
 }
 
-.domain-details p {
+.details-card-header {
+  display: flex; /* Flexbox for horizontal layout */
+  justify-content: space-between; /* Push header and price to opposite sides */
+  align-items: center; /* Vertically align header and price */
+  margin-bottom: 15px; /* Space below the header section */
+  padding: 10px 0; /* Add padding inside the header */
+  border-bottom: 1px solid #ddd; /* Optional: Add a separator for clarity */
+}
+
+.details-card-name {
+  font-size: 1.5rem; /* Make the header more prominent */
+  font-weight: lighter; /* Highlight the name */
+  margin: 0; /* Remove unwanted margins */
+  color: #000; /* Ensure text is visible */
+  overflow: hidden; /* Prevent text overflow */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.details-card-price {
+  font-size: 1.2rem; /* Adjust size to match the header */
+  color: #053993; /* Distinguish the price */
+  font-weight: lighter; /* Highlight the name */
+  margin: 0; /* Remove unwanted margins */
+  padding-left: 10px; /* Add space between price and header */
+}
+
+.details-card h2 {
+  margin: 0 0 15px;
+  text-align: left; /* Ensure header text aligns to the left */
+}
+
+.details-card p {
+  margin: 0 0 20px;
+  text-align: left; /* Align paragraph text to the left */
+}
+
+/* Info Sections */
+.info {
+  margin-top: 20px; /* Space above the SEO section */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info h3 {
+  margin: 0 0 10px;
   font-size: 1rem;
-  color: #555;
-  margin-bottom: 10px;
+  color: #333;
 }
 
-/* Purchase button */
+.info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info li {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.info li strong {
+  color: #000;
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  justify-content: flex-start; /* Align buttons to the left */
+  gap: 10px; /* Space between buttons */
+  margin-top: 20px; /* Space above the button container */
+}
+
 .purchase-button {
   background-color: #042660;
-  color: #fff;
+  color: white;
   border: none;
   padding: 10px 20px;
-  font-size: 0.9rem;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
 .purchase-button:hover {
   background-color: #a6b9d5;
+}
+
+.close-button {
+  background-color: #ccc;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #999;
+}
+
+/* Placeholder Text */
+.placeholder-text {
+  color: #555;
+  text-align: center;
+  font-size: 1rem;
+  margin: auto; /* Center placeholder text */
+}
+
+.bubble {
+  display: inline-block; /* Ensures the bubble adjusts to the text content */
+  background-color: #e0f7fa; /* Light blue background */
+  color: #00796b; /* Text color */
+  padding: 10px 15px; /* Space inside the bubble */
+  border-radius: 15px; /* Rounded corners for the bubble effect */
+  max-width: 300px; /* Set a maximum width to control text wrapping */
+  word-wrap: break-word; /* Ensures long words break to fit inside */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1100px) {
+  .domain-list {
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+  }
+}
+
+@media (max-width: 768px) {
+  .domain-page {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto auto; /* Stack details above the domain list */
+    grid-template-areas: 
+      "details"
+      "list"; /* Define layout areas */
+    gap: 20px; /* Space between rows */
+  }
+
+  .details-card {
+    width: 90%; /* Take most of the viewport width */
+    height: auto; /* Allow dynamic height based on content */
+    max-width: 90%; /* Prevent stretching too much */
+    max-height: 80%; /* Prevent card from becoming too tall */
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .details-container {
+    grid-area: details; /* Place details container in the first row */
+    height: auto; /* Allow dynamic height for smaller screens */
+    min-height: 400px; /* Reasonable minimum height */
+  }
+
+  .domain-list {
+    grid-template-columns: repeat(1, 1fr); /* Single column */
+    grid-area: list; /* Place domain list in the second row */
+  }
 }
