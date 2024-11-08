@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #25242c;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-icon {
+  font-size: 300px; /* Adjust icon size */
+  transition: transform 0.3s;
+}
+
+.footer-icon:hover {
+  transform: scale(2); /* Slight zoom on hover */
+}
+
