@@ -1,5 +1,15 @@
 :root {
-  --space-whey: black; /* Or any color you'd like for the loader */
+  --space-whey: rgb(253, 253, 253); /* Or any color you'd like for the loader */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 200vh; /* Make the page scrollable */
+  background: linear-gradient(180deg, #000000, #1b2735) fixed; /* Main background */
+  transition: background 1s ease-in-out; /* Smooth transition */
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .App {
@@ -10,9 +20,11 @@
 }
 
 .App-header {
+  position: sticky;
   display: flex; /* Flexbox for horizontal alignment */
   align-items: center; /* Center vertically */
   justify-content: flex-start; /* Align items to the left */
+  width: 100%;
   padding: 20px;
   color: white;
 }
@@ -28,18 +40,37 @@
   font-size: 2rem;
   color: #333;
   z-index: 1000; 
+  background: linear-gradient(90deg, #d5ccd3, #87838d, #c9c5cc);
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* border-bottom: 1px solid #ccc; */
 }
 
 .App-slogan {
   font-weight: lighter;
   font-style: italic;
-  color: #333;
+  color: #ffffff;
 
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.App-profile {
+  position: absolute; /* Allow precise positioning */
+  top: 20px; /* Position relative to the top of the header */
+  right: 50px; /* Position relative to the right of the header */
+}
+
+.Profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -69,6 +100,7 @@
   padding: 20px;
   color: white; /* Text color */
   font-size: 0.9rem;
+  top: -500;
 }
 
 
@@ -79,4 +111,158 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.space-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background: radial-gradient(circle at 50% 50%, #001220, #000000),
+              radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.5), transparent 80%),
+              linear-gradient(120deg, #1b2735, #090a0f);
+  background-blend-mode: screen, multiply;
+  transition: opacity 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.eclipse {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 1) 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 100px rgba(255, 255, 255, 0.3), 0 0 200px rgba(0, 120, 255, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.stars {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent 70%) 5px 5px,
+              rgba(255, 255, 255, 0.3);
+  background-size: 8px 8px;
+  position: absolute;
+  z-index: 0;
+}
+
+/* Space Background */
+.space-background {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  background: radial-gradient(circle at 50% 50%, #001220, #000000),
+              radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.5), transparent 80%),
+              linear-gradient(120deg, #1b2735, #090a0f);
+  background-blend-mode: screen, multiply;
+  overflow: hidden;
+}
+
+/* Eclipse */
+.eclipse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 1) 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 100px rgba(255, 255, 255, 0.3), 0 0 200px rgba(0, 120, 255, 0.5);
+  transform: translate(-50%, -50%);
+}
+
+/* Scroll Down Arrow */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 48.5%;
+  transform: translateX(-50%);
+  font-size: 6rem;
+  color: white;
+  animation: bounce 2s infinite;
+  border-width: 0 4px 4px 0;
+  z-index: 2;
+  border-radius: 15%;
+  margin: 0 auto;
+}
+
+/*
+.title-screen {
+  position: absolute;
+  top: 20px;
+  left: 48.5%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  border-radius: 15%;
+  margin: 0 auto;
+  color: #333;
+  z-index: 1000; 
+  background: linear-gradient(90deg, #d5ccd3, #87838d, #c9c5cc);
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+*/
+
+.scroll-down span {
+  display: inline-block;
+  transform: translateY(0);
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 12px; /* Adjust width as desired */
+}
+
+/* Scrollbar track (background) */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.8); /* Black background */
+}
+
+/* Scrollbar thumb (draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #333; /* Dark gray thumb */
+  border-radius: 6px; /* Rounded edges */
+}
+
+/* Scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Lighter gray on hover */
+}
+
+/* Scrollbar corner */
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0.8); /* Match the track */
+}
+
+::-webkit-scrollbar-thumb {
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Change color on hover */
+}
+
+/* Firefox-specific scrollbar styling */
+* {
+  scrollbar-width: thin; /* Makes the scrollbar thinner */
+  scrollbar-color: #333 rgba(0, 0, 0, 0.8); /* Thumb and track colors */
 }

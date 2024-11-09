@@ -12,19 +12,32 @@ function App() {
           <HeaderLoader />
         </div>
         <div className='App-title-group'>
-          <div className="App-title">shikase.com</div>
-          <div className="App-slogan">Exclusive Premium Domains, Curated Weekly</div>
+          <div className="App-title">SHIKASE _MARKET</div>
+          <div className="App-slogan"></div>
         </div>
+        <div className='App-profile'>
+          <img 
+            src="https://via.placeholder.com/40" // Replace with your profile image URL
+            alt="Profile"
+            className="Profile-image"
+          />
+        </div>
+        
       </div>
       <div className='domain-list-container'>
-        <DomainListPage />
+        <DomainListPage title='Technology'/>
       </div>
-      <div className='footer-container'>
+      <div className='domain-list-container'>
+        <DomainListPage title='Health and Wellness'/>
+      </div>
+      <div className='footer'>
         <Footer />
       </div>
     </div>
   );
 }
+
+
 
 export default App;
 
