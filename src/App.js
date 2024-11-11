@@ -12,7 +12,7 @@ function App() {
           <HeaderLoader />
         </div>
         <div className='App-title-group'>
-          <div className="App-title">SHIKASE _MARKET</div>
+          <div className="App-title"></div>
           <div className="App-slogan"></div>
         </div>
         <div className='App-profile'>
