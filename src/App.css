@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   height: 200vh; /* Make the page scrollable */
-  background: linear-gradient(180deg, #000000, #1b2735) fixed; /* Main background */
+  background: linear-gradient(180deg, #000000, #322c6b) fixed; /* Main background */
   transition: background 1s ease-in-out; /* Smooth transition */
   overflow-x: hidden;
   overflow-y: scroll;

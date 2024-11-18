@@ -201,6 +201,20 @@
   background-color: #a6b9d5;
 }
 
+.offer-button {
+  background-color: #046029;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.offer-button:hover {
+  background-color: #7fbf98;
+}
+
 .close-button {
   background-color: #ccc;
   color: #000;

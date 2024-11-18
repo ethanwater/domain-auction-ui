@@ -13,7 +13,7 @@ function Footer() {
         <i className="fa fa-twitter footer-icon" aria-hidden="true"></i>
       </a>
       <div className="footer-contact">
-        <span className="footer-contact-text">Contact us at: (917) 930-9550</span>
+        <span className="footer-contact-text">Support: support@shikase.com</span>
       </div>
       <span className="footer-text">© 2024 Shikase.com. All rights reserved.</span>
     </div>

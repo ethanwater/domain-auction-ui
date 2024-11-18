@@ -51,9 +51,9 @@ function DomainListPage({title}) {
 
     //-------------------------------------------------------------MOCK DATA--------------------------------------------------------------------------------
     const technologyDomains = [
-      { id: 1, name: 'lively.now', price: 500.00, description: 'A great domain for a startup.', availabilityStatus: 1, searchVolume: 1300, domainStatus: 3, registar: 2, gdAppraisal: 682, ddAppraisal: 1012, domainYear: 2024 },
-      { id: 2, name: 'myportfolio.io', price: 750.00, description: 'Perfect for a personal portfolio site.', availabilityStatus: 1 },
-      { id: 3, name: 'ckc.dev', price: 200.00, description: 'Ideal for tech startups and developers.', availabilityStatus: 1 },
+      { id: 1, name: 'startup.now', price: 500.00, description: 'A great domain for a startup.', availabilityStatus: 1, searchVolume: 1300, domainStatus: 3, registar: 2, gdAppraisal: 682, ddAppraisal: 1012, domainYear: 2024 },
+      { id: 2, name: 'myportfolio.io', price: 750.00, description: 'Perfect for a personal portfolio site.', availabilityStatus: 1, acquisitionOption: 1},
+      { id: 3, name: 'devloper.dev', price: 200.00, description: 'Ideal for tech startups and developers.', availabilityStatus: 1 },
       { id: 4, name: 'healthplus.org', price: 900.00, description: 'Great for health-related organizations.', availabilityStatus: 1 },
       { id: 5, name: 'fintechpro.com', price: 5000.00, description: 'The perfect domain for fintech companies.', availabilityStatus: 0 },
       { id: 6, name: 'codehub.dev', price: 1200.00, description: 'Ideal for developer-focused platforms.', availabilityStatus: 1 },
@@ -176,11 +176,22 @@ function DomainListPage({title}) {
                     Purchase
                   </button>
                 )}
+                {selectedDomain.acquisitionOption == 1 && (
+                  <button
+                    onClick={() =>
+                      alert(`Purchasing ${selectedDomain.name} for $${selectedDomain.price}`)
+                    }
+                    className="offer-button"
+                  >
+                   Offer 
+                  </button>
+                )}
                 <button onClick={closeDetails} className="close-button">
                   Close
                 </button>
               </div>
             </div>
+            
           ) : (
             <p className="placeholder-text">Select a domain to see details.</p>
           )}
